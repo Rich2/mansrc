@@ -10,8 +10,9 @@ val GraphicsJs = Project("GraphicsJs", file("SbtDir/GraphicsJs")).settings(
 
   Compile / sourceGenerators += Def.task {
   val rectStr = scala.io.Source.fromFile("Graphics/srcJvm/Rect.scala").mkString
+  val rectStr2 = rectStr.replaceAll("AnyVal with ", "")
   val rect = (Compile / sourceManaged).value / "Js" / "Rect.scala"
-	  IO.write(rect, rectStr)
+	  IO.write(rect, rectStr2)
 
   	/*val file = (Compile / sourceManaged).value / "Js" / "Test.scala"
 	  IO.write(file, """object Test extends App { println("Hi") }""")*/
