@@ -1,0 +1,9 @@
+project/project/
+target/
+DocProj/
+DevData/
+bin/
+out/
+SbtDir/
+Dev/User/
+.*/
